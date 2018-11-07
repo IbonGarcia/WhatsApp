@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <TabHost android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAlignment="center">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TabWidget android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:id="@android:id/tabs" />
+
+            <FrameLayout android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@android:id/tabcontent" >
+
+                <!-- ELEMENTOS QUE VEREMOS EN LA PESTAÑA,
+                  HAY QUE DARLES ID PORKE EN EL ARCHIVO JAVA
+                  USAREMOS DICHO ID PARA SABER QUE ELEMENTO VA DENTRO DE QUE
+                  PESTAÑA -->
+
+                <LinearLayout android:id="@+id/tab1"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <ListView
+                        android:id="@+id/lista_llamadas"
+                        android:layout_width="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="wrap_content">
+                    </ListView>
+
+                </LinearLayout>
+
+                <LinearLayout android:id="@+id/tab2"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <ListView
+                        android:id="@+id/lista_chat"
+                        android:layout_width="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="wrap_content">
+                    </ListView>
+
+                </LinearLayout>
+                <LinearLayout android:id="@+id/tab3"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <ListView
+                        android:id="@+id/lista_contacto"
+                        android:layout_width="match_parent"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="wrap_content">
+                    </ListView>
+
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+</LinearLayout>
