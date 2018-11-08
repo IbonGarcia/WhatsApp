@@ -1,5 +1,6 @@
 package com.example.dm2.whatsapp;
 
+import android.annotation.SuppressLint;
 import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
@@ -7,6 +8,7 @@ import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.menu.ActionMenuItemView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
@@ -60,7 +62,29 @@ public class MainActivity extends AppCompatActivity {
                 res.getDrawable(android.R.drawable.ic_dialog_map));
         tabs.addTab(spec);
 
-        tabs.setCurrentTab(0);
+        tabs.setCurrentTab(1);
+
+        tabs.setOnTabChangedListener(new TabHost.OnTabChangeListener() {
+
+            @SuppressLint("RestrictedApi")
+            public void onTabChanged(String tabId) {
+
+                ActionMenuItemView icono=findViewById(R.id.otros);
+                if (tabId.equalsIgnoreCase("Llamadas")){
+
+                    icono.setIcon(getDrawable(R.mipmap.ic_call));
+                    return;
+                }
+                if(tabId.equalsIgnoreCase("CHATS")){
+                    icono.setIcon(getDrawable(R.mipmap.ic_chat));
+                    return;
+                }
+                if(tabId.equalsIgnoreCase("CONTACTOS")){
+                    icono.setIcon(getDrawable(R.mipmap.ic_contact));
+                    return;
+                }
+            }
+        });
 
         // ESTO ES PARA RELLENAR LAS LISTAS
         //LISTA DE LAS LLAMADAS

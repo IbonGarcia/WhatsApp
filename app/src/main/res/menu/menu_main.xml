@@ -3,8 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.dm2.whatsapp.MainActivity">
     <item
+        android:id="@+id/lupa"
+        android:orderInCategory="100"
+        android:title=""
+        android:icon="@mipmap/ic_lupa"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/otros"
+        android:orderInCategory="100"
+        android:icon="@mipmap/ic_chat"
+        android:title=""ds
+        app:showAsAction="ifRoom" />
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+
 </menu>
