@@ -12,7 +12,7 @@
         android:id="@+id/otros"
         android:orderInCategory="100"
         android:icon="@mipmap/ic_chat"
-        android:title=""ds
+        android:title=""
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_settings"
